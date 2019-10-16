@@ -1,0 +1,145 @@
+:root {
+  --color-primary-r: 79;
+  --color-primary-g: 65;
+  --color-primary-b: 123;
+  --color-primary: rgb(var(--color-primary-r), var(--color-primary-g), var(--color-primary-b));
+
+  --color-active-r: 119;
+  --color-active-g: 92;
+  --color-active-b: 201;
+  --color-active: rgb(var(--color-active-r), var(--color-active-g), var(--color-active-b));
+}
+
+html {
+  background-color: rgb(
+    calc(255 - 0.05 * (255 - var(--color-primary-r))),
+    calc(255 - 0.05 * (255 - var(--color-primary-g))),
+    calc(255 - 0.05 * (255 - var(--color-primary-b)))
+  );
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 12px;
+  min-height: 100%;
+  font: 16px/18px Roboto, sans-serif;
+}
+
+
+/* Top Bar */
+
+.top-bar {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: var(--color-primary, #000);
+  min-height: 50px;
+  border-radius: 50px;
+  padding: 9px 24px;
+  color: #fff;
+}
+
+.top-bar::after {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: 20px;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  background: transparent;
+  box-shadow: 0 4px 40px 0 rgba(39, 33, 57, 40);
+}
+
+.top-bar--logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+/* Layout */
+.content {
+  padding: 32px 36px;
+}
+
+@media (max-width: 460px) {
+  .content {
+    padding: 16px 0px;
+  }
+}
+
+.section {
+  margin: 42px 0;
+}
+
+
+/* Text Styles */
+
+.page-heading {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--color-primary, #000);
+  text-transform: uppercase;
+}
+
+.section--heading {
+  font-size: 18px;
+  font-weight: 400;
+  color: rgb(
+    calc(255 - 0.7 * (255 - var(--color-primary-r))),
+    calc(255 - 0.7 * (255 - var(--color-primary-g))),
+    calc(255 - 0.7 * (255 - var(--color-primary-b)))
+  );
+}
+.section--heading .date {
+  margin: 0 0 0 10px;
+  font-weight: 500;
+  color: var(--color-primary, #000);
+}
+
+.list-item {
+  margin: 12px 0;
+  position: relative;
+  padding: 0 0 0 14px;
+}
+.list-item::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '•';
+}
+
+
+/* Components */
+
+.filters {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 8px 0 40px;
+}
+
+.filters--item {
+  display: block;
+  padding: 13px 16px 11px;
+  margin: 0 16px 8px 0;
+  font: 500 16px/18px 'Roboto', sans-serif;
+  color: var(--color-primary, #000);
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.filters--item-selected {
+  background-color: rgb(
+    calc(255 - 0.15 * (255 - var(--color-primary-r))),
+    calc(255 - 0.15 * (255 - var(--color-primary-g))),
+    calc(255 - 0.15 * (255 - var(--color-primary-b)))
+  );
+  color: var(--color-active, #666);
+}
