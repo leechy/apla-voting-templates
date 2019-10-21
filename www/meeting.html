@@ -36,9 +36,12 @@
         </div>
 
         <div class="card">
-          <div class="card--content">
+          <div class="card--content card--content-padding">
 
-            <div class="card-item--details">
+              <div class="icon-paragraph">
+                <div class="icon-paragraph--icon icon-quorum-yes"></div>
+                Quorum: <span class="icon-paragraph--strong icon-paragraph--success">YES</span>
+              </div>
               <div class="icon-paragraph">
                 <div class="icon-paragraph--icon icon-calendar"></div>
                 17 October 2019 <span class="icon-paragraph--strong">12:00</span>&mdash;<span class="icon-paragraph--strong">14:00</span>
@@ -47,7 +50,58 @@
                 <div class="icon-paragraph--icon icon-location"></div>
                 2, Place de Strasbourg, L-2562 Luxembourg
               </div>
+
+              <div class="confirmation-message">
+                <div class="confirmation-message--question">
+                  Please acknowlege the receipt of this meeting notification
+                  by clicking on of the button below:
+                </div>
+                <button class="button">Confirm</button>
+              </div>
+
+          </div>
+
+          <!-- if there is at least one person who confirmed notification, showing delimiter and next block -->
+          <div class="card-items-delimiter"></div>
+          <div class="card--content card--content-padding">
+
+            <div class="icon-paragraph atendees-title">
+              <div class="icon-paragraph--icon icon-atendee"></div>
+              Atendees
+              <span>10</span>
             </div>
+
+            <div class="atendees-list">
+              <div class="atendees-list--title atendees-list--title-present">Confirmed:</div>
+              <div class="atendees-list--people">
+                Doyle Wright,
+                Darrin Norris,
+                Jared Reyes,
+                Louis Holmes,
+                Sue Jensen,
+              </div>
+              <div class="atendees-list--title atendees-list--title-proxy">Confirmed (proxy):</div>
+              <div class="atendees-list--people">
+                <!-- current user is highlited -->
+                <span class="atendees-list--user">You Name (Sue Jensen)</span>,
+                Reginald Holland (Sue Jensen),
+                Duane Bowers (Sue Jensen)
+              </div>
+              <div class="atendees-list--title atendees-list--title-absent">Confirmed:</div>
+              <div class="atendees-list--people">
+                Velma Rhodes,
+                William Martinez
+              </div>
+
+              <div class="proxy-form">
+                <button class="button">Create Proxy</button>
+                <div class="icon-paragraph">
+                  <div class="icon-paragraph--icon icon-info"></div>
+                  You can choose a person from the list above to represent you as proxy
+                </div>
+              </div>
+            </div>
+
           </div>
 
         </div>
@@ -60,8 +114,11 @@
           Agenda
         </div>
 
+        <!-- each point in separate cards -->
         <div class="card">
-          <a class="card-item" href="./meeting-agenda.html">
+          <div class="card-item card-item--with-link">
+            <!-- link to the internal agenda page (with comments and results) -->
+            <a class="card-item--link" href="./meeting-agenda.html"></a>
             <div class="card-item--status-cell">
               <div class="card-item--point">
                 Point
@@ -70,24 +127,29 @@
             </div>
             <div class="card-item--status-cell-delimiter"></div>
             <div class="card-item--content-cell">
+              <!-- point title, description is shown on the internal page -->
               <div class="cart-item--title">Approval of the minutes</div>
 
               <div class="card-item--contents-bar">
-                <div class="card-item--contents card-item--contents-changed">
-                  <div class="card-item--contents-icon icon-messages"></div>
-                  <div class="card-item--contents-number">472</div>
-                </div>
-                <div class="card-item--contents">
-                  <div class="card-item--contents-icon icon-documents"></div>
-                  <div class="card-item--contents-number">2</div>
+                <div class="card-item--contents-icons">
+                  <!-- `card-item--contents-changed` class - only if we know there are changes -->
+                  <div class="card-item--contents card-item--contents-changed">
+                    <div class="card-item--contents-icon icon-messages"></div>
+                    <div class="card-item--contents-number">472</div>
+                  </div>
+                  <div class="card-item--contents">
+                    <div class="card-item--contents-icon icon-documents"></div>
+                    <div class="card-item--contents-number">2</div>
+                  </div>
                 </div>
               </div>
             </div>
-          </a>
+          </div>
         </div>
 
         <div class="card">
-          <a class="card-item" href="./meeting-agenda.html">
+          <div class="card-item card-item--with-link">
+            <a class="card-item--link" href="./meeting-agenda.html"></a>
             <div class="card-item--status-cell">
               <div class="card-item--point">
                 Point
@@ -99,21 +161,23 @@
               <div class="cart-item--title">Report of officers and committees</div>
 
               <div class="card-item--contents-bar">
-                <div class="card-item--contents">
-                  <div class="card-item--contents-icon icon-description"></div>
-                  <div class="card-item--contents-number">1</div>
-                </div>
-                <div class="card-item--contents">
-                  <div class="card-item--contents-icon icon-messages"></div>
-                  <div class="card-item--contents-number">4</div>
-                </div>
-                <div class="card-item--contents card-item--contents-changed">
-                  <div class="card-item--contents-icon icon-documents"></div>
-                  <div class="card-item--contents-number">1</div>
+                <div class="card-item--contents-icons">
+                  <div class="card-item--contents">
+                    <div class="card-item--contents-icon icon-description"></div>
+                  </div>
+                  <div class="card-item--contents">
+                    <div class="card-item--contents-icon icon-messages"></div>
+                    <div class="card-item--contents-number">4</div>
+                  </div>
+                  <div class="card-item--contents card-item--contents-changed">
+                    <div class="card-item--contents-icon icon-documents"></div>
+                    <div class="card-item--contents-number">1</div>
+                  </div>
                 </div>
               </div>
             </div>
-          </a>
+          </div>
+          <!-- delimiter and then buttons showed only when the voting is active -->
           <div class="card-items-delimiter"></div>
           <div class="vote-buttons">
             <button class="button vote-button vote-button--reject">Reject</button>
@@ -123,14 +187,103 @@
             <button class="button vote-button vote-button--approve">Approve</button>
           </div>
         </div>
+
+        <div class="card">
+          <div class="card-item card-item--with-link">
+            <a class="card-item--link" href="./meeting-agenda.html"></a>
+            <!-- add class for the result here -->
+            <div class="card-item--status-cell card-item--approved">
+              <div class="card-item--result">85%</div>
+              <div class="card-item--point">
+                Point
+                <span class="card-item--point-no">3</span>
+              </div>
+            </div>
+            <div class="card-item--status-cell-delimiter"></div>
+            <div class="card-item--content-cell">
+              <div class="cart-item--title">Balance sheet and auditor’s report for 2018</div>
+
+              <div class="card-item--contents-bar">
+                <div class="card-item--contents-icons">
+                  <div class="card-item--contents">
+                    <div class="card-item--contents-icon icon-description"></div>
+                  </div>
+                  <div class="card-item--contents">
+                    <div class="card-item--contents-icon icon-messages"></div>
+                    <div class="card-item--contents-number">8</div>
+                  </div>
+                  <div class="card-item--contents card-item--contents-changed">
+                    <div class="card-item--contents-icon icon-documents"></div>
+                    <div class="card-item--contents-number">4</div>
+                  </div>
+                </div>
+
+                <!-- if you don't need the form element, then 'card-item--action' class should be at the button -->
+                <form class="card-item--action" action="./meetings-list.html">
+                  <button class="small-button">
+                    <div class="button-icon icon-view"></div>
+                    Transaction report
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-item card-item--with-link">
+            <a class="card-item--link" href="./meeting-agenda.html"></a>
+            <!-- add class for the result here -->
+            <div class="card-item--status-cell card-item--rejected">
+              <div class="card-item--result">23%</div>
+              <div class="card-item--point">
+                Point
+                <span class="card-item--point-no">4</span>
+              </div>
+            </div>
+            <div class="card-item--status-cell-delimiter"></div>
+            <div class="card-item--content-cell">
+              <div class="cart-item--title">Appointment of Board of Directors of the company</div>
+
+              <div class="card-item--contents-bar">
+                <div class="card-item--contents-icons">
+                  <div class="card-item--contents">
+                    <div class="card-item--contents-icon icon-description"></div>
+                  </div>
+                  <div class="card-item--contents card-item--contents-changed">
+                    <div class="card-item--contents-icon icon-messages"></div>
+                    <div class="card-item--contents-number">2</div>
+                  </div>
+                  <div class="card-item--contents">
+                    <div class="card-item--contents-icon icon-documents"></div>
+                    <div class="card-item--contents-number">1</div>
+                  </div>
+                </div>
+
+                <form class="card-item--action" action="./meetings-list.html">
+                  <button class="small-button">
+                    <div class="button-icon icon-view"></div>
+                    Transaction report
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       
       <div class="section">
         <a name="documents"></a>
-        <div class="section--heading icon-paragraph">
-          <div class="icon-paragraph--icon icon-documents"></div>
-          Documents Storage
+        <div class="layout-split">
+          <div class="section--heading icon-paragraph">
+            <div class="icon-paragraph--icon icon-documents"></div>
+            Documents Storage
+          </div>
+          <button class="small-button">
+            <div class="button-icon icon-download"></div>
+            All documents
+          </button>
         </div>
 
         <div class="filters">
@@ -147,7 +300,40 @@
     
         <div class="card">
           <div class="card--content">
-            blah-blah
+
+            <div class="document">
+              <!-- icon-document - generic document icon. use if can't determine doc type
+                otherwise we have following icon types:
+                   icon-document-audio - any kind of audio/music files
+                   icon-document-excel - spreadsheets
+                   icon-document-image - images
+                   icon-document-pdf   - PDF files
+                   icon-document-video - video files
+                   icon-document-word  - any word processor documents
+              -->
+              <div class="document--icon icon-document"></div>
+              <a href="#" class="document--name">Transaction report point 1</a>
+              <div class="document--meta">21 Oct 2019 by System</div>
+            </div>
+
+            <div class="document">
+              <div class="document--icon icon-document-word"></div>
+              <a href="#" class="document--name">Report of Grand Thornton for FY 2018</a>
+              <div class="document--meta">14 Oct 2019 by Corporate Secretary</div>
+            </div>
+
+            <div class="document">
+              <div class="document--icon icon-document-pdf"></div>
+              <a href="#" class="document--name">Transaction report point 2</a>
+              <div class="document--meta">18 Oct 2019 by System</div>
+            </div>
+
+            <div class="document">
+              <div class="document--icon icon-document-excel"></div>
+              <a href="#" class="document--name">Balance Sheet for FY 2018</a>
+              <div class="document--meta">11 Oct 2019 by Chief Accountant</div>
+            </div>
+  
           </div>
         </div>
       </div>
