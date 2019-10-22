@@ -25,6 +25,145 @@
 
       <div class="page-heading">Balance sheet and auditor's report for 2018</div>
 
+      <!-- voting buttons are shown only when the user can vote -->
+      <div class="section">
+        <div class="vote-buttons">
+          <button class="button vote-button vote-button--reject">Reject</button>
+          <span class="vote-button--space"></span>
+          <button class="button vote-button vote-button--abstain">Abstain</button>
+          <span class="vote-button--space"></span>
+          <button class="button vote-button vote-button--approve">Approve</button>
+        </div>
+      </div>
+
+      <!-- these sections are shown only if voting by the user is already done -->
+      <div class="two-sections">
+        <div class="section">
+          <div class="section--heading icon-paragraph">
+            <div class="icon-paragraph--icon icon-status"></div>
+            Status
+          </div>
+          <div class="card">
+            <div class="card--content card--content-padding">
+
+              <div class="point-status">
+
+                <div class="card-item--status-cell card-item--approved">
+                  <div class="card-item--result-circle card-item--icon-success"></div>
+                  <div class="card-item--point">
+                    Point
+                    <span class="card-item--point-no">1</span>
+                  </div>
+                </div>
+
+                <button class="small-button">
+                  <div class="button-icon icon-view"></div>
+                  Transaction report
+                </button>
+
+                <button class="small-button">
+                  <div class="button-icon icon-download"></div>
+                  All documents
+                </button>
+
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <div class="section">
+          <div class="section--heading icon-paragraph">
+            <div class="icon-paragraph--icon icon-chart"></div>
+            Statistics
+          </div>
+          <div class="card">
+            <div class="card--content card--content-padding">
+
+              <div class="chart chart--success-11">
+                <div class="chart--first-half">
+                  <div class="chart--half chart--success"></div>
+                  <!-- <div class="chart--half chart--warning"></div> -->
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <!-- sample sections with variants for rejected and abstain results -->
+      <div class="two-sections">
+        <div class="section">
+          <div class="section--heading icon-paragraph">
+            <div class="icon-paragraph--icon icon-status"></div>
+            Status (rejected)
+          </div>
+          <div class="card">
+            <div class="card--content card--content-padding">
+
+              <div class="point-status">
+
+                <div class="card-item--status-cell card-item--rejected">
+                  <div class="card-item--result-circle card-item--icon-reject"></div>
+                  <div class="card-item--point">
+                    Point
+                    <span class="card-item--point-no">2</span>
+                  </div>
+                </div>
+
+                <button class="small-button">
+                  <div class="button-icon icon-view"></div>
+                  Transaction report
+                </button>
+
+                <button class="small-button">
+                  <div class="button-icon icon-download"></div>
+                  All documents
+                </button>
+
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section--heading icon-paragraph">
+            <div class="icon-paragraph--icon icon-status"></div>
+            Status (abstain)
+          </div>
+          <div class="card">
+            <div class="card--content card--content-padding">
+
+              <div class="point-status">
+
+                <div class="card-item--status-cell card-item--abstain">
+                  <div class="card-item--result-circle card-item--icon-abstain"></div>
+                  <div class="card-item--point">
+                    Point
+                    <span class="card-item--point-no">3</span>
+                  </div>
+                </div>
+
+                <button class="small-button">
+                  <div class="button-icon icon-view"></div>
+                  Transaction report
+                </button>
+
+                <button class="small-button">
+                  <div class="button-icon icon-download"></div>
+                  All documents
+                </button>
+
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+      </div>
+
       <div class="section">
         <div class="section--heading icon-paragraph">
           <div class="icon-paragraph--icon icon-description"></div>
