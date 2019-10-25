@@ -1051,7 +1051,7 @@ body {
 }
 
 .section--heading {
-  font-size: 30px;
+  font-size: 16px;
   font-weight: 400;
   color: var(--color-primary-80, #777);
 }
@@ -1133,79 +1133,104 @@ body {
 /* Chart */
 
 .chart {
-  position: relative;
-  width: 144px;
-  height: 144px;
-  border: 18px solid var(--color-primary-30, #aaa);
-  border-radius: 90px;
+  margin: 11px 0;
+  width: 180px;
+  padding-bottom: 36px;
+  background: linear-gradient(
+    to right,
+    var(--color-success, green) calc(var(--approved) * 1%),
+    var(--color-warning, red) calc(var(--approved) * 1%),
+    var(--color-warning, red) calc((var(--approved) + var(--rejected)) * 1%),
+    var(--color-primary-30, #ccc) calc((var(--approved) + var(--rejected)) * 1%)
+  );
 }
-.chart--half {
+.chart--data {
+  min-height: 144px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-primary, #000);
+  background: white;
+}
+.chart--no {
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 60px;
+}
+.chart--title {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  text-transform: uppercase;
+}
+
+@supports (background: conic-gradient(red, tan)) {
+  .chart {
+    width: 144px;
+    height: 144px;
+    padding: 18px;
+    border-radius: 90px;
+    background: conic-gradient(
+      var(--color-success, green) calc(var(--approved) * 1%),
+      var(--color-warning, red) calc(var(--approved) * 1%),
+      var(--color-warning, red) calc((var(--approved) + var(--rejected)) * 1%),
+      var(--color-primary-30, #ccc) calc((var(--approved) + var(--rejected)) * 1%)
+    );
+  }
+  .chart--data {
+    width: 144px;
+    height: 144px;
+    background: white;
+    border-radius: 90px;
+  }
+}
+
+.statistics--gap {
+  width: 30px;
+}
+.statistics--container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.statistics {
+  margin: 0 0 0 20px;
+}
+.statistics--title {
+  position: relative;
+  margin-top: 18px;
+  padding: 0 0 0 16px;
+  font-weight: 500;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: var(--color-primary, #000);
+}
+.statistics--title::before {
+  content: '';
   position: absolute;
+  width: 6px;
   top: 0;
   left: 0;
-  width: 144px;
-  height: 144px;
-  border: 18px solid transparent;
-  border-radius: 90px;
-  transform: rotate(-45deg);
+  bottom: 0;
+  border-radius: 3px;
+  background-color: var(--color-primary-30, #ccc);
 }
-.chart--first-half {
-  position: absolute;
-  top: -18px;
-  left: 72px;
-  width: 90px;
-  height: 180px;
-  overflow: hidden;
+.statistics--approved::before {
+  background-color: var(--color-success, green);
 }
-.chart--first-half .chart--half {
-  left: -90px;
+.statistics--rejected::before {
+  background-color: var(--color-warning, red);
 }
-.chart--success {
-  border-left-color: var(--color-success, green);
-  border-top-color: var(--color-success, green);
+.statistics--votes {
+  margin-bottom: 18px;
+  padding: 0 0 0 16px;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--color-primary-70, #444);
 }
-.chart--warning {
-  border-right-color: var(--color-warning, red);
-  border-bottom-color: var(--color-warning, red);
-  transform: rotate(45deg);
-}
-
-
-.chart--success-1 .chart--first-half .chart--success {
-  transform: rotate(-43.2deg);
-}
-.chart--success-2 .chart--first-half .chart--success {
-  transform: rotate(-41.4deg);
-}
-.chart--success-3 .chart--first-half .chart--success {
-  transform: rotate(-39.6deg);
-}
-.chart--success-4 .chart--first-half .chart--success {
-  transform: rotate(-37.8deg);
-}
-.chart--success-5 .chart--first-half .chart--success {
-  transform: rotate(-36deg);
-}
-.chart--success-6 .chart--first-half .chart--success {
-  transform: rotate(-34.2deg);
-}
-.chart--success-7 .chart--first-half .chart--success {
-  transform: rotate(-32.4deg);
-}
-.chart--success-8 .chart--first-half .chart--success {
-  transform: rotate(-30.6deg);
-}
-.chart--success-9 .chart--first-half .chart--success {
-  transform: rotate(-28.8deg);
-}
-.chart--success-10 .chart--first-half .chart--success {
-  transform: rotate(-27deg);
-}
-.chart--success-11 .chart--first-half .chart--success {
-  transform: rotate(-25.2deg);
-}
-
-
 
 /* Profile */
 
