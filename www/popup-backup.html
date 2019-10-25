@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Apla Popup</title>
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link type="text/css" rel="stylesheet" href="apla.css">
+  </head>
+  <body>
+    <!-- iframe is just to show something behind the popup -->
+    <iframe src="./profile.html" style="
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    "></iframe>
+    <!-- overlay -->
+    <div style="
+      position: fixed;
+      z-index: 4;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--color-primary, #000);
+      opacity: 0.7;
+    "></div>
+    <!-- popup container -->
+    <div class="popup">
+      <!-- link here is for demo only. use only button -->
+      <a href="./profile.html"><button class="popup--close"></button></a>
+      <div class="popup--content">
+        <div class="popup--title">Backup account</div>
+        <div class="popup--fields">
+
+
+          <div class="qr-code--container">
+            <img class="qr-code" src="./assets/qr-code.png">
+            <div class="icon-paragraph">
+              <div class="icon-paragraph--icon icon-info"></div>
+              Use QR-Code to import the account on your mobile device
+            </div>
+          </div>
+
+          <div class="icon-paragraph icon-paragraph--strong">
+            <div class="icon-paragraph--icon icon-key"></div>
+            Private Key
+          </div>
+          <p class="description-paragraph">fbeb5a9a646a522a627419e782243d0910ba9ae36c639dd49e2c56f31a5d21a9</p>
+
+          <div class="controls controls--right">
+            <button class="small-button">
+              <div class="button-icon icon-copy"></div>
+              Copy to clipboard
+            </button>
+          </div>
+    
+          <div class="icon-paragraph icon-paragraph--strong">
+            <div class="icon-paragraph--icon icon-key"></div>
+            Public Key
+          </div>
+          <p class="description-paragraph">0475eac4286bcdcdea9231106d4c4afe3b1e1ae667a58e8ec85134112e61ed2d100767a70f2f41acbdaf3c48ba079d73e54620c1e5e9a76c6fe49565cc7a11dd42</p>
+
+          <div class="icon-paragraph icon-paragraph--strong">
+            <div class="icon-paragraph--icon icon-address"></div>
+            Address
+          </div>
+          <p class="description-paragraph">0524-7549-4116-2543-8095</p>  
+
+        </div>
+      </div>
+      <!-- buttons are in a separate container -->
+      <div class="popup--controls">
+        <button class="button button--clear">Cancel</button>
+        <span class="button--space"></span>
+        <button class="button">Download as file</button>
+      </div>
+    </div>
+  </body>
+</html>
